@@ -1,0 +1,59 @@
+# CHARTIX Finance Pro
+
+Bu klasor Render, Railway veya bilgisayarda calistirmak icin hazirdir.
+
+## Dosya yapisi
+
+```text
+chartix-upload/
+├── package.json
+├── server.js
+└── public/
+    └── index.html
+```
+
+## Bilgisayarda calistirma
+
+```bash
+npm install
+npm start
+```
+
+Sonra tarayicida ac:
+
+```text
+http://localhost:3000
+```
+
+## Render'a yukleme
+
+1. Bu klasoru GitHub'a yukle.
+2. Render'da New Web Service olustur.
+3. Build Command:
+
+```bash
+npm install
+```
+
+4. Start Command:
+
+```bash
+npm start
+```
+
+5. Deploy bitince Render sana `onrender.com` adresi verir.
+
+## Google AdSense
+
+`public/index.html` icinde su degerleri kendi AdSense hesabindaki degerlerle degistir:
+
+```html
+ca-pub-XXXXXXXXXXXXXXXX
+data-ad-slot="1111111111"
+data-ad-slot="2222222222"
+data-ad-slot="3333333333"
+```
+
+## Onemli uyari
+
+AI teknik analiz bolumu sadece bilgi amaclidir. Yatirim tavsiyesi degildir.
