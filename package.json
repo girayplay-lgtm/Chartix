@@ -1,0 +1,12 @@
+{
+  "name": "chartix-final",
+  "version": "1.0.0",
+  "description": "CHARTIX Pro - yfinance data, Firebase Auth watchlist, Google Ad placeholders, cookie consent",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
