@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CHARTIX Pro</title>
+
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3745790173610028"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=12000" />
+</head>
+
+<body>
+  <div id="consentOverlay" class="consent-overlay"></div>
+
+  <div id="cookieBox" class="cookie-box" style="display:grid;">
+    <div>
+      <strong>Cookies, Google Ads & Investment Disclaimer</strong>
+
+      <p>
+        CHARTIX uses cookies/localStorage for session preferences, watchlist data,
+        login storage, and user experience. This website may display Google Ads /
+        AdSense advertising spaces.
+      </p>
+
+      <p>
+        CHARTIX AI analysis is not investment advice. It is for informational and
+        educational purposes only. CHARTIX does not accept responsibility for
+        trading decisions, financial losses, profits, or actions taken based on
+        this website.
+      </p>
+
+      <p>
+        By clicking “I Accept”, you confirm that you understand and accept these terms.
+      </p>
+    </div>
+
+    <button id="acceptCookie">I Accept</button>
+  </div>
+
+  <div id="authModal" class="auth-modal">
+    <div class="auth-card">
+      <button class="close-btn" id="closeAuth">×</button>
+
+      <h2>Login to CHARTIX</h2>
+      <p>Continue with Google or email and password.</p>
+
+      <button id="googleLogin" class="google-btn">
+        Continue with Google
+      </button>
+
+      <div class="divider">or</div>
+
+      <input id="emailInput" type="email" placeholder="Email" />
+      <input id="passwordInput" type="password" placeholder="Password" />
+
+      <button id="emailLogin" class="primary-btn">
+        Login / Register with Email
+      </button>
+
+      <small>
+        Login is powered by Firebase Authentication. Your watchlist is saved to
+        your Firebase account.
+      </small>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">C</span>
+      <span>CHARTIX</span>
+      <span class="pro-badge">PRO</span>
+    </div>
+
+    <div class="search-wrap">
+      <input
+        id="searchInput"
+        placeholder="Search stock / crypto: AAPL, TSLA, BTC-USD..."
+      />
+
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div class="top-actions">
+      <div class="ad-mini">Google Ad Space</div>
+      <button id="loginBtn">Login</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h3>Watchlist</h3>
+
+      <div id="watchlist" class="watchlist"></div>
+
+      <div class="side-ad">
+        <span>Google Ad Space</span>
+        <small>300x250 ad area</small>
+      </div>
+    </aside>
+
+    <section class="main-panel">
+      <section class="hero-card">
+        <div>
+          <h1 id="symbolTitle">AAPL</h1>
+          <p id="assetName">Apple Inc.</p>
+          <p id="dataSource">Source: -</p>
+        </div>
+
+        <div class="price-block">
+          <div id="mainPrice" class="main-price">-</div>
+          <div id="mainChange" class="main-change">-</div>
+          <div id="marketState" class="market-state">-</div>
+        </div>
+      </section>
+
+      <section class="chart-card">
+        <div class="section-head">
+          <h2>Price Chart</h2>
+
+          <div class="chart-range">
+            <button class="range active" data-range="1D">1D</button>
+            <button class="range" data-range="5D">5D</button>
+            <button class="range" data-range="1W">1W</button>
+            <button class="range" data-range="1M">1M</button>
+          </div>
+        </div>
+
+        <canvas id="priceChart" width="1200" height="430"></canvas>
+      </section>
+
+      <section class="ad-wide">
+        <span>Google Ad Space</span>
+        <small>728x90 responsive ad area</small>
+      </section>
+
+      <section class="grid-2">
+        <section class="ai-card">
+          <div class="section-head">
+            <h2>CHARTIX AI Technical Analysis</h2>
+            <span id="aiScore">Score: -</span>
+          </div>
+
+          <p id="aiSummary">Preparing AI analysis...</p>
+
+          <div id="signalGrid" class="signal-grid"></div>
+
+          <div class="strength-box">
+            <div>
+              <small>Strongest Signal</small>
+              <strong id="strongestSignal">-</strong>
+            </div>
+
+            <div>
+              <small>Weakest Signal</small>
+              <strong id="weakestSignal">-</strong>
+            </div>
+          </div>
+
+          <p id="aiDisclaimer" class="disclaimer">
+            This AI technical analysis is not investment advice.
+            It is for informational purposes only.
+          </p>
+        </section>
+
+        <section class="details-card">
+          <h2>Technical / Fundamental Data</h2>
+          <div id="detailsGrid" class="details-grid"></div>
+        </section>
+      </section>
+
+      <section class="news-card">
+        <div class="section-head">
+          <h2>Related News</h2>
+          <span>Selected asset segment</span>
+        </div>
+
+        <div id="newsList" class="news-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/api.js?v=12000"></script>
+  <script src="js/chart.js?v=12000"></script>
+  <script type="module" src="js/auth.js?v=12000"></script>
+  <script type="module" src="js/app.js?v=12000"></script>
+</body>
+</html>
